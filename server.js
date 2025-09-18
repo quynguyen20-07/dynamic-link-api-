@@ -15,8 +15,7 @@ app.use(
   })
 );
 
-const URI = process.env.MONGO_DATABASE_URI || "mongodb://localhost:27017/shortlink";
-console.log("MongoDB URI:", URI);
+const URI = process.env.MONGO_DATABASE_URI;
 mongoose
   .connect(URI, { serverSelectionTimeoutMS: 5000, maxPoolSize: 10 })
   .then(() => {
